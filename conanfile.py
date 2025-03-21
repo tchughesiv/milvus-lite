@@ -78,7 +78,7 @@ class MilvusLiteConan(ConanFile):
 
     def requirements(self):
         if self.settings.os not in ["Macos", "Android"]:
-            self.requires("libunwind/1.7.2")
+            self.requires("libunwind/1.7.2", override=True)
         if self.settings.os == "Android":
             self.requires("openblas/0.3.27")
 
