@@ -1,4 +1,4 @@
-from conans import ConanFile
+from conan import ConanFile
 from conan.tools.cmake import CMake
 
 
@@ -14,7 +14,6 @@ class MilvusLiteConan(ConanFile):
         # protobuf
         "protobuf/3.21.12",
         # folly
-        "fmt/9.1.0",
         "folly/2023.10.30.09@milvus/dev",
         # antlr
         "antlr4-cppruntime/4.13.1",
@@ -41,28 +40,28 @@ class MilvusLiteConan(ConanFile):
     generators = {"cmake", "cmake_find_package"}
 
     default_options = {
-        "glog:with_gflags": True,
-        "glog:shared": True,
-        "gtest:build_gmock": False,
-        "onetbb:tbbmalloc": False,
-        "onetbb:tbbproxy": False,
-        "boost:without_locale": True,
-        "boost:without_test": True,
-        "boost:without_stacktrace": True,
-        "fmt:header_only": True,
-        "prometheus-cpp:with_pull": False,
-        "double-conversion:shared": True,
-        "arrow:filesystem_layer": True,
-        "arrow:parquet": True,
-        "arrow:compute": True,
-        "arrow:with_re2": True,
-        "arrow:with_zstd": True,
-        "arrow:with_boost": True,
-        "arrow:with_thrift": True,
-        "arrow:with_jemalloc": True,
-        "arrow:shared": False,
-        "arrow:with_s3": False,
-        "libcurl:with_ssl": False,
+        "glog/*:with_gflags": True,
+        "glog/*:shared": True,
+        "gtest/*:build_gmock": False,
+        "onetbb/*:tbbmalloc": False,
+        "onetbb/*:tbbproxy": False,
+        "boost/*:without_locale": True,
+        "boost/*:without_test": True,
+        "boost/*:without_stacktrace": True,
+        "fmt/*:header_only": True,
+        "prometheus-cpp/*:with_pull": False,
+        "double-conversion/*:shared": True,
+        "arrow/*:filesystem_layer": True,
+        "arrow/*:parquet": True,
+        "arrow/*:compute": True,
+        "arrow/*:with_re2": True,
+        "arrow/*:with_zstd": True,
+        "arrow/*:with_boost": True,
+        "arrow/*:with_thrift": True,
+        "arrow/*:with_jemalloc": True,
+        "arrow/*:shared": False,
+        "arrow/*:with_s3": False,
+        "libcurl/*:with_ssl": False,
     }
 
     def configure(self):
